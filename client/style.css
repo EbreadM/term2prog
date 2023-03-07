@@ -1,0 +1,282 @@
+* {
+    margin: 0%;
+	width: 100%;
+	/*test filter thing*/
+	padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+/* #wrapper {
+    width:100%;
+} */
+
+.navbar1 {
+	position: sticky;
+	position:relative;
+	top: 0px;
+	width:100%;
+	margin-top: 0px;
+	display: flex; /* use flex box to display these objects as we want them to line up side by side*/
+	justify-content: space-between; /*push them as far apart from each other */
+	align-items: center;
+	background-color: #6D2366;
+	background: linear-gradient(rgba(255, 255, 255, 0) 0%, #6D2366 10%, #6D2366 90%, rgba(0,0,0,0));
+	color: #000000;
+}
+
+.title{
+	font-size: 1.5rem;
+	margin: .5rem;
+}
+
+.navbar-links ul {
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.navbar-links li {
+	list-style: none;
+}
+
+.navbar-links a{
+	text-decoration: none;
+	color: #000000;
+	padding: 1rem;
+	display: block;
+}
+
+/* style nav bar to have animation on hover */
+.navbar-links li:hover {
+	background-color: #a596d5a4;
+}
+
+.toggle-button {
+	position: absolute; /*absolute positioning to force it to be on the right side of the screen */
+	top: 0.75rem; /*pushes it 0.75rem form top of screen */
+	right: 1rem;
+	display: none;
+	flex-direction: column; /*so all different spans line up on top of each other */
+	justify-content: space-between; /*as much space between elements */
+	width: 30px;
+	height: 21px;
+}
+
+.toggle-button .bar {
+	height: 3px;
+	width: 100%;
+	background-color: white;
+	border-radius: 10px;
+}
+@media (max-width: 800px) {
+	.toggle-button {
+		display: flex;
+	}
+	.navbar-links {
+		display: none; 
+		width: 100%;
+	}
+	.navbar1 {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.navbar-links ul {
+		width: 100%;
+		flex-direction: column;
+	}
+	.navbar-links li {
+		text-align: center;
+	}
+	.navbar-links a {
+		padding: .5rem 1rem;
+	}
+	/* when active we want display to be flex */
+	.navbar-links.active {
+		display: flex;
+	}
+}
+#logo{
+	width:5%;
+	display: block;
+}
+
+#image1 {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 0.3;
+}
+
+#svgbottom {
+    position:fixed;
+    bottom:0px;
+    width: 100%;
+    height: auto;
+}
+#toggle-theme{
+	color: white;
+	background-color: #000000;
+	border-radius: 50%;
+	max-width: 2%;
+	position: absolute;
+  }
+.container1{
+	display: flex;
+}
+.sidebar{
+	width: 100%;
+	height: 20px;
+	padding: 50px 0;
+	background-color: #8f5c85ab;
+	position: relative;
+}
+
+.filter{
+	position:absolute;
+}
+.filter h3{
+	margin-bottom: 30px;
+}
+.contant{
+	width: 100%;
+	position: absolute;
+	margin-top:20vh;
+}
+/* .header{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 10vh;
+	border-bottom: 1px solid #eee;
+	color: #383838;
+	background-color: #eee;
+}
+.header p{
+	font-size: 30px;
+	font-weight: bold;
+} */
+.fil-p{
+	padding: 15px 15px;
+	background-color: white;
+	margin: 7px 0;
+	cursor: pointer;
+	color: #333;
+	text-align: justify;
+}
+.fil-p:hover{
+	color: #6D2366;
+	background-color: #aaa;
+}
+#root{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr) ;
+	grid-gap: 20px;
+	padding: 30px;
+}
+@media screen and (max-width: 768px) {
+	#root {
+	  grid-template-columns: repeat(2, 1fr);
+	}
+  }
+  
+  @media screen and (max-width: 480px) {
+	#root {
+	  grid-template-columns: 1fr;
+	}
+  }
+.box{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	border: 3px solid #94476f;
+	border-radius: 10px;
+	padding: 15px;
+	background-color: #a9abdb82;
+}
+.box>h3{
+	margin-bottom: 20px;
+}
+.img-box{
+	width: 100%;
+	height: 180px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.images{
+	max-height: 90%;
+	max-width: 90%;
+	object-fit: contain;
+	object-position: center;
+}
+.bottom{
+	margin-top: 20px;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 70px;
+}
+h2{
+	font-size: 20px;
+	color: red;
+}
+h3{
+	text-align: center;
+	font-size: 3vh;
+}
+button:hover{
+	background-color: #9fd8b5;
+}
+/*fix the dropdown section at some point*/
+/* Style for the dropdown menu */
+.dropdown {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: #555;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	background-color: #d09dce;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	appearance: none;
+  }
+  
+  .dropdown option {
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #6794b6;
+	background-color: #fff;
+	cursor: pointer;
+  }
+  
+  #butt {
+	border-radius: 10px;
+	max-width: 50%;
+  }
+  body {
+	background-color: #fff;
+	color: #080708;
+  }
+  
+  .dark-mode {
+	background-color: #080708;
+	color: #fff;
+  }
+  
+.sup {
+	width: 100px;
+}
