@@ -238,7 +238,7 @@ button:hover{
 }
 /*fix the dropdown section at some point*/
 /* Style for the dropdown menu */
-.dropdown {
+/* .dropdown {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
@@ -261,7 +261,7 @@ button:hover{
 	color: #6794b6;
 	background-color: #fff;
 	cursor: pointer;
-  }
+  } */
   
   #butt {
 	border-radius: 10px;
@@ -277,6 +277,3 @@ button:hover{
 	color: #fff;
   }
   
-.sup {
-	width: 100px;
-}

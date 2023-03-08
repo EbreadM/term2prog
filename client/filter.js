@@ -41,10 +41,19 @@ async function filters(item) {
 	let itemList = '';
 	console.log(data);
 	for(i of data) {
-		itemList += `<img src="${i.image}">`
+		itemList += `<div class='box'>
+		<h3>${i.title}</h3>
+		<div class='img-box'>
+		<img class='images' src="${i.image}"></img>
+		</div>
+		<div class='bottom'>
+		<h2>£ ${i.price}.00</h2>
+		<button id="butt">Add to cart</button>
+		</div>
+		</div>`
 	};
 	console.log(itemList);
-	document.getElementById('newdiv').innerHTML = itemList;
+	document.getElementById('root').innerHTML = itemList;
 }
 
 filters('Tech')

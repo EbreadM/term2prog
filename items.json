@@ -9,7 +9,7 @@
     } ],
 
     "Tech": [{
-    "title": "Air Pods - Dangerous Little Bear",
+    "title": "Air Pods - Little Bear",
 	"image": "image1/2.jpg",
 	"location": "Church Street",
 	"price": "60",
@@ -70,7 +70,7 @@
 	"price": "200",
 	"category": "Clothes"
 }, {
-    "title": "Sina Shi Creamy White Hat",
+    "title": "Creamy White Hat",
 	"image": "image1/16.jpg",
 	"location": "Durham Business School Room 454",
 	"price": "200",
@@ -91,25 +91,25 @@
 	"price": "100",
 	"category": "Cards"
 }, {
-    "title": "A SARTAUSKAS Student Card",
+    "title": "A SARTAUSKAS Student ID",
 	"image": "image1/8.jpg",
 	"location": "Grey College",
 	"price": "350",
 	"category": "Cards"
 }, {
-    "title": "Mr Jack C Holmes Bank Card",
+    "title": "Jack C Holmes Bank Card",
 	"image": "image1/14.jpg",
 	"location": "Claypath Bridge",
 	"price": "130",
 	"category": "Cards"
 }, {
-    "title": "Durham University Student Card",
+    "title": "Durham Uni Student ID",
 	"image": "image1/21.jpg",
 	"location": "Heavyside",
 	"price": "130",
 	"category": "Cards"
 }, {
-    "title": "UK Driving Licence",
+    "title": "Driving Licence",
 	"image": "image1/23.jpg",
 	"location": "Unknown",
 	"price": "130",
@@ -117,7 +117,7 @@
 },
 
 {
-    "title": "UK Driving Licence-Mr Oliver Muthusi",
+    "title": "Driving Licence-Mr Muthusi",
 	"image": "image1/25.jpg",
 	"location": "Unknown",
 	"price": "130",
