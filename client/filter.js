@@ -57,3 +57,25 @@ async function filters(item) {
 }
 
 filters('Tech')
+async function postingwhatever() {
+    const selectdaform = document.getElementById('forms');
+
+    selectdaform.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const data = new FormData(selectdaform);
+        const dataJSON = JSON.stringify(Object.fromEntries(data));
+		console.log(data); //remove later
+        const response = await fetch('http://127.0.0.1:8090/items/new',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+              },
+            body: dataJSON
+    });
+    selectdaform.reset();
+});
+};
+
+postingwhatever();

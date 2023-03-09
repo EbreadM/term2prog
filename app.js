@@ -19,4 +19,16 @@ app.get('/items/:item', function (req, resp) {
     resp.send(send);
 });
 
+app.post('/items/new', function(req, resp) {
+    const title = req.body.title;
+    const image = req.body.image
+    const location = req.body.location;
+    const price = req.body.price;
+    const category = req.body.category;
+
+// This is where you google how to add to JSON array
+
+    resp.send(items);
+});
+
 module.exports = app; // this is so on server.js we can go require(app) in order to import it and actually run the server, you dont realy need to know this one in detail its not too important.
