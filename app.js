@@ -1,12 +1,13 @@
-//all server side code: const blah blah express blah
+// all server side code: const blah blah express blah
 const express = require('express'); // literally just express
 const app = express(); // literally just express but you run it so you call it app i think
 const path = require('path'); // this one we use only for the next line basically
+const fs = require('fs');
 app.use(express.static(path.join(__dirname, 'client'))); // this one makes it so we dont have CORS errors which im not exactly sure what that is but its bad and it also helps us display our html file on the page
 
 const itemsJSON = './items.json'; // this one puts our json directory on a variable
 app.use(express.json()); // this one idk why we run it but we need it for express i think (you just need it idk)
-const items = require(itemsJSON) // this one imports the JSON file from the directory, this is like the actual JSON in a variable
+const items = require(itemsJSON); // this one imports the JSON file from the directory, this is like the actual JSON in a variable
 
 app.get('/items', function (req, resp) { // this one is a basic .get (it basically sends out something we want into a URL that we pick, in this case /items)
     const keys = Object.keys(items); // This one puts all of the keys in the json in a variable
@@ -19,15 +20,21 @@ app.get('/items/:item', function (req, resp) {
     resp.send(send);
 });
 
-app.post('/items/new', function(req, resp) {
+app.post('/items/new', function (req, resp) {
     const title = req.body.title;
-    const image = req.body.image
+    const image = req.body.image;
     const location = req.body.location;
     const price = req.body.price;
     const category = req.body.category;
 
-// This is where you google how to add to JSON array
-
+    items[category].push({
+        title,
+        image,
+        location,
+        price,
+        category
+    });
+    fs.writeFileSync(itemsJSON, JSON.stringify(items));
     resp.send(items);
 });
 
