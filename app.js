@@ -1,22 +1,24 @@
-// all server side code: const blah blah express blah
-const express = require('express'); // literally just express
-const app = express(); // literally just express but you run it so you call it app i think
-const path = require('path'); // this one we use only for the next line basically
+const express = require('express');
+const app = express();
+
+const itemsJSON = './items.json';
+const businessJSON = './business.JSON';
+
 const fs = require('fs');
-app.use(express.static(path.join(__dirname, 'client'))); // this one makes it so we dont have CORS errors which im not exactly sure what that is but its bad and it also helps us display our html file on the page
 
-const itemsJSON = './items.json'; // this one puts our json directory on a variable
-const businessJSON = './business.json';
+app.use(express.json());
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'client')));
+
 const business = require(businessJSON);
-app.use(express.json()); // this one idk why we run it but we need it for express i think (you just need it idk)
-const items = require(itemsJSON); // this one imports the JSON file from the directory, this is like the actual JSON in a variable
+const items = require(itemsJSON);
 
-app.get('/items', function (req, resp) { // this one is a basic .get (it basically sends out something we want into a URL that we pick, in this case /items)
-    const keys = Object.keys(items); // This one puts all of the keys in the json in a variable
-    resp.send(keys); // this one sends out the keys to the server
+app.get('/items', function (req, resp) {
+    const keys = Object.keys(items);
+    resp.send(keys);
 });
 
-app.get('/business', function(req, resp) {
+app.get('/business', function (req, resp) {
     const thing = Object.keys(business);
     resp.send(thing);
 });
@@ -69,4 +71,4 @@ app.post('/business/new', function (req, resp) {
     resp.send(business);
 });
 
-module.exports = app; // this is so on server.js we can go require(app) in order to import it and actually run the server, you dont realy need to know this one in detail its not too important.
+module.exports = app;
