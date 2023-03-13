@@ -1,79 +1,71 @@
 /* eslint-disable no-undef */
 
-'use strict';
-
 const request = require('supertest');
 const app = require('./app');
 
-describe('Test the recipes service', () => {
-    test('GET /recipes succeeds', () => {
+describe('Test the business service', () => {
+    test('GET /business succeeds', () => {
         return request(app)
-	    .get('/recipes')
+	    .get('/business')
 	    .expect(200);
     });
 
-    test('GET /recipes returns JSON', () => {
+    test('GET /business returns JSON', () => {
         return request(app)
-	    .get('/recipes')
+	    .get('/business')
 	    .expect('Content-type', /json/);
     });
 
-    test('GET /recipes includes carbonara', () => {
+    test('GET /business includes Bob', () => {
         return request(app)
-	    .get('/recipes')
-	    .expect(/carbonara/);
+	    .get('/business')
+	    .expect(/Bob/);
     });
 
-    test('GET /recipe/carbonara succeeds', () => {
+    test('GET /business/Bob succeeds', () => {
         return request(app)
-	    .get('/recipe/carbonara')
+	    .get('/business/Bob')
 	    .expect(200);
     });
 
-    test('POST /recipe/new', () => {
-        const params = { key: 'santa', instructions: 'Mix holly, cranberries and carrots for an unresonably long time and dress in ridiculous clothes' };
+    test('POST /business/new', () => {
+        const params = { name: 'Sunny', headquarters: 'Marys Computer Room', rating: '4.5', mobile: '+44 7563 8767 67', email: 'deez@dur.scammers.uk'};
         return request(app)
-        .post('/recipe/new')
+        .post('/business/new')
         .send(params)
 	    .expect(200);
     });
 });
-/* eslint-disable no-undef */
 
-'use strict';
-
-const request = require('supertest');
-const app = require('./app');
-
-describe('Test the recipes service', () => {
-    test('GET /recipes succeeds', () => {
+describe('Test the items service', () => {
+    test('GET /items succeeds', () => {
         return request(app)
-	    .get('/recipes')
+	    .get('/items')
 	    .expect(200);
     });
 
-    test('GET /recipes returns JSON', () => {
+    test('GET /items returns JSON', () => {
         return request(app)
-	    .get('/recipes')
+	    .get('/items')
 	    .expect('Content-type', /json/);
     });
 
-    test('GET /recipes includes carbonara', () => {
+    test('GET /items includes Tech', () => {
         return request(app)
-	    .get('/recipes')
-	    .expect(/carbonara/);
+	    .get('/items')
+	    .expect(/Tech/);
     });
 
-    test('GET /recipe/carbonara succeeds', () => {
+    test('GET /items/Tech succeeds', () => {
         return request(app)
-	    .get('/recipe/carbonara')
+	    .get('/items/Tech')
 	    .expect(200);
     });
 
-    test('POST /recipe/new', () => {
-        const params = { key: 'santa', instructions: 'Mix holly, cranberries and carrots for an unresonably long time and dress in ridiculous clothes' };
+    test('POST /items/new', () => {
+        const params = { title: 'santa', image: 'dfiudhf', location:'church', price: '£77', category: 'Keys' };
         return request(app)
-        .post('/recipe/new')
+        .post('/items/new')
         .send(params)
 	    .expect(200);
     });
