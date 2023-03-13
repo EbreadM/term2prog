@@ -9,7 +9,7 @@ dropdownItems += `<a class="dropdown-item" href="#" onclick="filters('${element}
 };
 
 document.getElementById('dropdown').innerHTML = dropdownItems; // We make the inside of the div have the elements we just added to dropdownItems
-}
+};
 document.addEventListener('DOMContentLoaded', displayItem);
 
 async function filters (item) {
@@ -19,7 +19,6 @@ const fetchDataText = await fetchData.text();
 const data = JSON.parse(fetchDataText);
 
 let itemList = '';
-console.log(data);
 for (const i of data) {
 itemList += `<div class='box'>
 <h3>${i.title}</h3>
@@ -32,7 +31,6 @@ itemList += `<div class='box'>
 </div>
 </div>`;
 };
-console.log(itemList);
 document.getElementById('root').innerHTML = itemList;
 } catch (error) {
 alert('OH NO THERE WAS AN ERROR TwT');

@@ -286,3 +286,7 @@ button:hover{
 	margin: auto;
 	width: 50%;
 }
+
+.hidden {
+	display: none;
+}
